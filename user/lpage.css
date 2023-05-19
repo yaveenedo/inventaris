@@ -1,0 +1,226 @@
+/* Global styles */
+div {
+    background-image: url("image1.png"), url("image2.png"), url("image3.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1920px;
+    flex: 1;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.nav-logo img {
+    height: 50px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+.nav-menu li {
+    margin-right: 20px;
+}
+
+.nav-menu li:last-child {
+    margin-right: 0;
+}
+
+.nav-menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover{
+    color: #7b7b7b;
+}
+
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("https://cdn.pixabay.com/photo/2017/06/14/15/32/noodles-2400589_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    color: #FFB900;
+    text-shadow: 2px 2px #000;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFB900;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background-color: #222;
+    color: #FFB900;
+  }
+  
+  /* About Section */
+  .about-section {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+  }
+  
+  .about-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+  
+  .about-item {
+    width: 300px;
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  .about-item i {
+    font-size: 3rem;
+    color: #FFB900;
+    margin-bottom: 1rem;
+  }
+  
+  .about-item h3 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+  
+  .about-item p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+/* Contact Section */
+.contact-section {
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 6rem 0;
+}
+
+.contact-section h2 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 4rem;
+}
+
+.contact-section p {
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.contact-section ul {
+  list-style: none;
+  margin-top: 3rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-section li {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin: 1.5rem;
+}
+
+.contact-section li i {
+  font-size: 2rem;
+  margin-right: 2rem;
+  color: #333;
+}
+
+.contact-section li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.contact-section li a:hover {
+  color: #FFB900;
+}
+
+  
+/* Footer Section */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
