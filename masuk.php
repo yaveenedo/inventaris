@@ -12,7 +12,7 @@ $ambildatastok = mysqli_query($conn,"SELECT * FROM stok");
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Nama Barang</th>
+                        <th>Nama iddo Barang</th>
                         <th>Deskripsi Barang</th>
                         <th>Stok Barang</th>
                     </tr>
