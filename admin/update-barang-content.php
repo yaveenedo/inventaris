@@ -8,11 +8,9 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>ID Barang</th>
                                     <th>Nama Barang</th>
-                                    <th>Deskripsi Barang</th>
                                     <th>Stok Barang</th> 
-                                    <th>Tanggal Masuk</th>                                 
-                                    <th>Tanggal Keluar</th>
                                     <th>Berat</th>
                                     <th>P</th>
                                     <th>L</th>
@@ -22,11 +20,9 @@
                             </thead>
                             <tfoot>
                                 <tr>   
+                                    <th>ID Barang</th>
                                     <th>Nama Barang</th>
-                                    <th>Deskripsi Barang</th>
                                     <th>Stok Barang</th> 
-                                    <th>Tanggal Masuk</th>                                 
-                                    <th>Tanggal Keluar</th>
                                     <th>Berat</th>
                                     <th>P</th>
                                     <th>L</th>
@@ -57,8 +53,6 @@
                                     <td><?=$nama_barang;?></td>
                                     <td><?=$desk_barang;?></td>
                                     <td><?=$stok;?></td>
-                                    <td><?=$tanggal_masuk;?></td>
-                                    <td><?=$tanggal_keluar;?></td>
                                     <td><?=$berat;?></td>
                                     <td><?=$panjang;?></td>
                                     <td><?=$lebar;?></td>
@@ -89,10 +83,6 @@
                                     <input type="text" name="deskripsi_barang" value="<?=$desk_barang;?>" class="form-control">
                                     <br/>
                                     <input type="number" name="stok_barang" value="<?=$stok;?>" class="form-control">
-                                    <br/>
-                                    <input type="datetime-local" name="tanggal_masuk" value="<?=$tanggal_masuk;?>" class="form-control">
-                                    <br/>
-                                    <input type="datetime-local" name="tanggal_keluar" value="<?=$tanggal_keluar;?>" class="form-control">
                                     <br/>
                                     <input type="number" step = "any" name="bobot_barang" value="<?=$berat;?>" class="form-control">
                                     <br/>

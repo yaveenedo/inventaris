@@ -8,11 +8,9 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>ID Barang</th>
                                     <th>Nama Barang</th>
-                                    <th>Deskripsi Barang</th>
                                     <th>Stok Barang</th> 
-                                    <th>Tanggal Masuk</th>                                 
-                                    <th>Tanggal Keluar</th>
                                     <th>Berat</th>
                                     <th>P</th>
                                     <th>L</th>
@@ -22,11 +20,9 @@
                             </thead>
                             <tfoot>
                                 <tr>   
+                                    <th>ID Barang</th>
                                     <th>Nama Barang</th>
-                                    <th>Deskripsi Barang</th>
                                     <th>Stok Barang</th> 
-                                    <th>Tanggal Masuk</th>                                 
-                                    <th>Tanggal Keluar</th>
                                     <th>Berat</th>
                                     <th>P</th>
                                     <th>L</th>
@@ -57,8 +53,6 @@
                                     <td><?=$nama_barang;?></td>
                                     <td><?=$desk_barang;?></td>
                                     <td><?=$stok;?></td>
-                                    <td><?=$tanggal_masuk;?></td>
-                                    <td><?=$tanggal_keluar;?></td>
                                     <td><?=$berat;?></td>
                                     <td><?=$panjang;?></td>
                                     <td><?=$lebar;?></td>
@@ -70,10 +64,10 @@
                                         
                                     </td>
                                 </tr>
-                                <!-- The Modal -->
-                                <div class="modal fade" id="delete<?=$idb;?>">
-                                    <div class="modal-dialog">
-                                    <div class="modal-content">
+                            <!-- The Modal -->
+                            <div class="modal fade" id="delete<?=$idb;?>">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
                                 
                                     <!-- Modal Header -->
                                     <div class="modal-header">
@@ -83,13 +77,13 @@
                                     
                                     <!-- Modal body -->
                                     <form method="post">
-                                    <div class="modal-body">
-                                        Apakah anda yakin ingin menghapus <?=$nama_barang;?>?
-                                        <input type="hidden" name="idb" value="<?=$idb;?>"/>
-                                        <br/>
-                                        <br/>
-                                        <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
-                                    </div>
+                                        <div class="modal-body">
+                                            Apakah anda yakin ingin menghapus <?=$nama_barang;?>?
+                                            <input type="hidden" name="idb" value="<?=$idb;?>"/>
+                                            <br/>
+                                            <br/>
+                                            <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
+                                        </div>
                                     </form>
                                     
                                 </div>

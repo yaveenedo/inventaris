@@ -11,5 +11,7 @@
         <a class="nav-link" href="tambah-barang.php">Tambah Barang</a>
         <a class="nav-link" href="update-barang.php">Update Barang</a>
         <a class="nav-link" href="delete-barang.php">Delete Barang</a>
+        <a class="nav-link" href="barang-masuk.php">Barang Masuk</a>
+        <a class="nav-link" href="barang-keluar.php">Barang Keluar</a>
     </nav>
 </div>

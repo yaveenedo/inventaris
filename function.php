@@ -2,19 +2,6 @@
 
 $conn = mysqli_connect("localhost","root","","inventaris");
 
-
-function sapa() {
-    date_default_timezone_set('Asia/Jakarta'); // Sesuaikan dengan timezone Anda
-    $waktu = date('H'); // Ambil jam saat ini
-  
-    if ($waktu < 12) {
-      echo "Selamat pagi, pengunjung!";
-    } elseif ($waktu < 18) {
-      echo "Selamat siang, pengunjung!";
-    } else {
-      echo "Selamat malam, pengunjung!";
-    }
-  }
 function register($data){
     global $conn;
 
@@ -69,5 +56,31 @@ function login($username, $password) {
     return false;
 }
 
+function getLoggedInUsername() {
+  // untuk mendapatkan username dari akun yang sedang login
+  if (isset($_SESSION['username'])) {
+    return $_SESSION['username'];
+  }
 
+  return null;
+}
+
+$usernameFromDatabase = getLoggedInUsername();
+
+$username = $usernameFromDatabase;
+function sapa() {
+  global $username;
+  date_default_timezone_set('Asia/Jakarta'); // Sesuaikan dengan timezone Anda
+  $waktu = date('H'); // Ambil jam saat ini
+
+  if ($waktu < 10) {
+    echo "Selamat pagi, ", $username;
+  } elseif ($waktu < 15) {
+    echo "Selamat siang, ", $username;
+  } elseif ($waktu < 19) {
+    echo "Selamat sore, ", $username;
+  } else {
+    echo "Selamat malam, ",$username;
+  }
+}
 ?>
