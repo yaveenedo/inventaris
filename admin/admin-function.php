@@ -92,4 +92,42 @@ if(isset($_POST['hapusbarangmasuk'])){
     echo "GAGAL";
   }
 };
+
+if (isset($_POST["addnewbarangkeluar"])){
+  $id_barang_stok = $_POST["id_barang_stok"];
+  $tanggal_keluar = $_POST["tanggal_keluar"];
+  $stok_keluar = $_POST["stok_keluar"];
+  $penerima = $_POST["penerima"];
+
+
+  $addtotablekeluar = mysqli_query($conn, "insert into barang_keluar (id_barang_stok, tanggal_keluar, stok_keluar , penerima) values('$id_barang_stok','$tanggal_keluar', '$stok_keluar', '$penerima')");
+  header("location:barang-keluar.php");
+  if(!$addtotablekeluar) {
+    echo "GAGAL";
+  }
+};
+
+if (isset($_POST["editbarangkeluar"])){
+  $id_barang_keluar = $_POST["id_barang_keluar"];
+  $tanggal_keluar = $_POST["tanggal_keluar"];
+  $stok_keluar = $_POST["stok_keluar"];
+  $penerima = $_POST["penerima"];
+  
+  
+  $edittotablekeluar = mysqli_query($conn, "update barang_keluar set tanggal_keluar='$tanggal_keluar', stok_keluar='$stok_keluar', penerima='$penerima' where id_barang_keluar='$id_barang_keluar'");
+  header("location:barang-keluar.php");
+  if(!$edittotablekeluar) {
+    echo "GAGAL";
+  }
+};
+
+if(isset($_POST['hapusbarangkeluar'])){
+  $id_barang_keluar = $_POST['id_barang_keluar'];
+
+  $hapuskeluar = mysqli_query($conn, "delete from barang_keluar where id_barang_keluar='$id_barang_keluar'");
+  header("location:barang-keluar.php");
+  if(!$hapuskeluar){
+    echo "GAGAL";
+  }
+};
 ?>
