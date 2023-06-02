@@ -1,39 +1,33 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">Barang Masuk</h1>
+            <h1 class="mt-4">Barang Keluar</h1>
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Tanggal Keluar</th> 
-                                    <th>Nama Barang</th>
-                                    <th>Stok</th>
-                                    <th>Stok Keluar</th>
-                                    <th>Penerima</th> 
-                                    <th>Stok Sisa</th>
-                                    <th>Aksi</th>
+                                    <th class="text-center">Tanggal Keluar</th> 
+                                    <th class="text-center">Nama Barang</th>
+                                    <th class="text-center">Stok Keluar</th>
+                                    <th class="text-center">Penerima</th> 
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>Tanggal Keluar</th> 
-                                    <th>Nama Barang</th>
-                                    <th>Stok</th>
-                                    <th>Stok Keluar</th>
-                                    <th>Penerima</th> 
-                                    <th>Stok Sisa</th>
-                                    <th>Aksi</th>
+                                    <th class="text-center">Tanggal Keluar</th> 
+                                    <th class="text-center">Nama Barang</th>
+                                    <th class="text-center">Stok Keluar</th>
+                                    <th class="text-center">Penerima</th> 
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </tfoot>
                             <tbody>
 
                                 <?php
-                                // $ambildatastok = mysqli_query($conn, "select * from stok UNION select * from barang_masuk");
                                 $ambildatastok = mysqli_query($conn, "SELECT * FROM stok
-                                      LEFT JOIN barang_masuk ON stok.id_barang = barang_masuk.id_barang_stok
                                       LEFT JOIN barang_keluar ON stok.id_barang = barang_keluar.id_barang_stok");
                                 while ($data = mysqli_fetch_array($ambildatastok)) {
                                     $stok_barang = $data["stok_barang"];
@@ -43,16 +37,13 @@
                                     $desk_barang = $data["deskripsi_barang"]; //nama_barang
                                     $stok_keluar = $data["stok_keluar"];
                                     $penerima = $data["penerima"];
-                                    $stok_sisa = $data["stok_sisa"];
                                 ?>
                                     <tr>
                                         <td><?= $tanggal_keluar; ?></td>
                                         <td><?= $desk_barang; ?></td>
-                                        <td><?= $stok_barang; ?></td>
                                         <td><?= $stok_keluar; ?></td>
                                         <td><?= $penerima; ?></td>
-                                        <td><?= $stok_sisa; ?></td>
-                                        <td>
+                                        <td class="text-center">
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah-barang-keluar<?= $id_barang_stock; ?>">
                                                 Tambah
                                             </button>
@@ -87,6 +78,7 @@
                                                         <input type="text" name="penerima" placeholder="Penerima" class="form-control">
                                                         <br />
                                                         <input type="hidden" name="id_barang_stok" value="<?=$id_barang_stock;?>"/>
+                                                        <input type="hidden" name="stok_barang" value="<?=$stok_barang;?>"/>
                                                         <button type="submit" class="btn btn-primary" name="addnewbarangkeluar">Submit</button>
                                                     </div>
                                                 </form>

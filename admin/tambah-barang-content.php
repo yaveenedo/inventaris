@@ -42,8 +42,6 @@
                                     $nama_barang = $data["nama_barang"];
                                     $desk_barang = $data["deskripsi_barang"];
                                     $stok = $data["stok_barang"];
-                                    $tanggal_masuk = $data["tanggal_masuk"];
-                                    $tanggal_keluar = $data["tanggal_keluar"];
                                     $berat = $data["bobot_barang"];
                                     $panjang = $data["panjang_barang"];
                                     $lebar = $data["lebar_barang"];

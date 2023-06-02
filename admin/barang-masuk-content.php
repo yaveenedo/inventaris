@@ -8,20 +8,20 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Tanggal Masuk</th>
-                                    <th>Nama Barang</th>
-                                    <th>Stok Masuk</th>
-                                    <th>Keterangan</th>
-                                    <th>Aksi</th>
+                                    <th class="text-center">Tanggal Masuk</th>
+                                    <th class="text-center">Nama Barang</th>
+                                    <th class="text-center">Stok Masuk</th>
+                                    <th class="text-center">Keterangan</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>Tanggal Masuk</th>
-                                    <th>Nama Barang</th>
-                                    <th>Stok Masuk</th>
-                                    <th>Keterangan</th>
-                                    <th>Aksi</th>
+                                    <th class="text-center">Tanggal Masuk</th>
+                                    <th class="text-center">Nama Barang</th>
+                                    <th class="text-center">Stok Masuk</th>
+                                    <th class="text-center">Keterangan</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -35,6 +35,7 @@
                                     $tanggal_masuk = $data["tanggal_masuk"];
                                     $desk_barang = $data["deskripsi_barang"]; //nama_barang
                                     $stok_masuk = $data["stok_masuk"];
+                                    $stok_barang = $data["stok_barang"];
                                     $keterangan = $data["keterangan"];
 
 
@@ -45,7 +46,7 @@
                                         <td><?= $desk_barang; ?></td>
                                         <td><?= $stok_masuk; ?></td>
                                         <td><?= $keterangan; ?></td>
-                                        <td>
+                                        <td class="text-center">
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah-barang-masuk<?= $id_barang_stock; ?>">
                                                 Tambah
                                             </button>
@@ -80,6 +81,7 @@
                                                         <input type="text" name="keterangan" placeholder="Keterangan" class="form-control">
                                                         <br />
                                                         <input type="hidden" name="id_barang_stok" value="<?=$id_barang_stock;?>"/>
+                                                        <input type="hidden" name="stok_barang" value="<?=$stok_barang;?>"/>
                                                         <button type="submit" class="btn btn-primary" name="addnewbarangmasuk">Submit</button>
                                                     </div>
                                                 </form>
