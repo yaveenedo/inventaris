@@ -131,7 +131,7 @@
                                                 <!-- Modal body -->
                                                 <form method="post">
                                                     <div class="modal-body">
-                                                        Apakah anda yakin ingin menghapus <?=$desk_barang;?>?
+                                                        Apakah anda yakin ingin menghapus data barang masuk <?=$desk_barang;?>?
                                                         <input type="hidden" name="id_barang_masuk" value="<?=$id_barang_masuk;?>"/>
                                                         <br/>
                                                         <br/>

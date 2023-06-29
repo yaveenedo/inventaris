@@ -2,6 +2,7 @@
 
 $conn = mysqli_connect("localhost","root","","inventaris");
 
+// Fungsi untuk melakukan registrasi pengguna
 function register($data){
     global $conn;
 
@@ -10,7 +11,7 @@ function register($data){
     $password = mysqli_real_escape_string($conn, $data["password"]);
     $password_confirmation = mysqli_real_escape_string($conn, $data["password_confirmation"]);
 
-    // cek data sudah terdaftar/belum
+    // Cek apakah username sudah terdaftar
     $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
 
     if(mysqli_fetch_assoc($result)){
@@ -20,23 +21,24 @@ function register($data){
         return false;
     }
 
+    // Cek kesesuaian password dan konfirmasi password
     if( $password !== $password_confirmation){
-    echo "<script>
-        alert('konfirmasi password tidak sesuai!');
+        echo "<script>
+            alert('konfirmasi password tidak sesuai!');
         </script>";
-
-    return false;
-
+        return false;
     }
-    // enkripsi agar aman
+
+    // Enkripsi password
     $password = password_hash($password, PASSWORD_DEFAULT);
     
-    // masukkan ke database
+    // Masukkan data pengguna ke dalam database
     mysqli_query($conn, "INSERT INTO user VALUES('','$username','$password','$email')");
 
     return mysqli_affected_rows($conn);
 }
 
+// Fungsi untuk melakukan login pengguna
 function login($username, $password) {
     global $conn;
 
@@ -52,35 +54,37 @@ function login($username, $password) {
         }
     }
 
-    // ?Jika username atau password tidak cocok, return false
+    // Jika username atau password tidak cocok, return false
     return false;
 }
 
+// Fungsi untuk mendapatkan username pengguna yang sedang login
 function getLoggedInUsername() {
-  // untuk mendapatkan username dari akun yang sedang login
-  if (isset($_SESSION['username'])) {
-    return $_SESSION['username'];
-  }
+    if (isset($_SESSION['username'])) {
+        return $_SESSION['username'];
+    }
 
-  return null;
+    return null;
 }
 
+// Mendapatkan username pengguna yang sedang login
 $usernameFromDatabase = getLoggedInUsername();
 
 $username = $usernameFromDatabase;
-function sapa() {
-  global $username;
-  date_default_timezone_set('Asia/Jakarta'); // Sesuaikan dengan timezone Anda
-  $waktu = date('H'); // Ambil jam saat ini
 
-  if ($waktu < 10) {
-    echo "Selamat pagi, ", $username;
-  } elseif ($waktu < 15) {
-    echo "Selamat siang, ", $username;
-  } elseif ($waktu < 19) {
-    echo "Selamat sore, ", $username;
-  } else {
-    echo "Selamat malam, ",$username;
-  }
+// Fungsi untuk menyapa pengguna berdasarkan waktu
+function sapa() {
+    global $username;
+    date_default_timezone_set('Asia/Jakarta'); // Sesuaikan dengan timezone Anda
+    $waktu = date('H'); // Ambil jam saat ini
+
+    if ($waktu < 10) {
+        echo "Selamat pagi, ", $username;
+    } elseif ($waktu < 15) {
+        echo "Selamat siang, ", $username;
+    } elseif ($waktu < 19) {
+        echo "Selamat sore, ", $username;
+    } else {
+        echo "Selamat malam, ",$username;
+    }
 }
-?>
